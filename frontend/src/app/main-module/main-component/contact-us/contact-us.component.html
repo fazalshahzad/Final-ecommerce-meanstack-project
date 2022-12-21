@@ -1,0 +1,96 @@
+<div class="img">
+    <div class="container">
+      <div class="row">
+        <div class="banner-header text-center">
+          <h1 class="text-white text-center">|Best Shopping Website</h1>
+          <h3 class="text-center text-white">Go And Explore Our E-Commerce-Web App</h3>
+      <!-- HTML !-->
+    <button class="button-58" role="button"><span class="text">Explore</span><span>Products</span></button>
+           
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    </div>
+    <!------------------------- Map --------------------------->
+    <h3 class="text-center">| Where We Are From</h3>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27226.993907105527!2d74.33779475!3d31.458889949999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1665925202832!5m2!1sen!2s" width="100%" height="650vh" style="border:1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!------------------------- Contact-Us ------------------>
+    <h3 class="text-center">| Contact-Us</h3>
+    <div class="container">
+      <div class="row">
+        <form class="cnt-form" (ngSubmit)="submitMyContactForm()" [formGroup]="myContactForm">
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name" formControlName="Name">
+                  <!------------------------------------------------- Validation  -->
+            <div class="text-danger"
+            *ngIf="myContactForm.controls['Name'].invalid && (myContactForm.controls['Name'].dirty || myContactForm.controls['Name'].touched)">
+            <span *ngIf="myContactForm.controls['Name'].errors.minlength || myContactForm.controls['Name'].errors.maxlength ">
+              <small>Name between 4 to 20 Characters!</small></span>
+            <span *ngIf="(myContactForm.controls['Name'].errors.pattern)">
+              Only Alphabets & Spaces Allowed</span>
+            <span *ngIf="myContactForm.controls['Name'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div> 
+               <!------------------------------------------------- Validation  -->
+          </div>
+
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" formControlName="Email">
+            
+            <div class="text-danger" *ngIf="myContactForm.controls['Email'].invalid && (myContactForm.controls['Email'].dirty || myContactForm.controls['Email'].touched)">
+              <span *ngIf="myContactForm.controls['Email'].errors.email">
+                <small>Write Correct Email example@example.com</small>
+              </span>
+              <span *ngIf="myContactForm.controls['Email'].errors.required">
+                <small>Field Required!</small>
+              </span>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Address</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Address" formControlName="Address">
+
+            <div class="text-danger" *ngIf="myContactForm.controls['Address'].invalid && (myContactForm.controls['Address'].dirty || myContactForm.controls['Address'].touched)">
+              <span *ngIf="myContactForm.controls['Address'].errors.required">
+                <small>Field Required!</small>
+              </span>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Phone-No</label>
+            <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Phone-No" formControlName="PhoneNo">
+
+            <div class="text-danger" *ngIf="myContactForm.controls['PhoneNo'].invalid && (myContactForm.controls['PhoneNo'].dirty || myContactForm.controls['PhoneNo'].touched)">
+              <span *ngIf="myContactForm.controls['PhoneNo'].errors.pattern">
+                <small>Allowed only Numbers b/w 0 to 9</small>
+              </span>
+              <span *ngIf="myContactForm.controls['PhoneNo'].errors.required">
+                <small>Field Required!</small>
+              </span>
+            </div>
+            
+          </div>
+          <div class="mb-3  textareabox">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message" formControlName="Textarea"></textarea>
+
+            <div class="text-danger" *ngIf="myContactForm.controls['Address'].invalid && (myContactForm.controls['Address'].dirty || myContactForm.controls['Address'].touched)">
+              <span *ngIf="myContactForm.controls['Address'].errors.required">
+                <small>Field Required!</small>
+              </span>
+            </div>
+
+          </div>
+          <button type="submit" [disabled]="myContactForm.invalid " class="btn btn-dark w-100 mb-3">Submit</button>
+        </form>
+      </div>
+    </div>

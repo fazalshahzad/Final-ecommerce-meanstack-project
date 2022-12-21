@@ -1,0 +1,265 @@
+<div class="img">
+    <div class="container">
+      <div class="row">
+        <div class="banner-header text-center">
+          <h1 class="text-white text-center">|Best Shopping Website</h1>
+          <h3 class="text-center text-white">Go And Explore Our E-Commerce-Web App</h3>
+      <!-- HTML !-->
+    <button class="button-58" role="button"><span class="text">Explore</span><span>Products</span></button>
+           
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    </div>
+
+<!----------------------------------------------------------- Latest-Products-Section ----------------------------------------->
+<h1 class="text-center product-heading">Latest-Products</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of DataComeFromJson">
+      <!-- flip-card-container -->
+<div class="flip-card-container cardBox" style="--hue: 220" *ngIf="item.productCategorie === 'Latest'">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img class="image1"  [src]="item.image[0]"  alt="Salman Baloch">
+        <figcaption>{{item.Name}}</figcaption>
+      </figure>
+
+      <ul>
+        <!-- <li><h5 style="color:white;">{{item.title}}</h5></li> -->
+        <li><h5 class="color white">Total Quantity</h5></li>
+        <li><h4 class="color white">{{item.qty}}</h4></li>
+
+        <li>
+          <span *ngIf="item.qty!==0"><i class="fa-solid fa-square-check text-primary"></i>
+          </span>
+
+          <span *ngIf="item.qty === 0"><i class="fa-solid fa-rectangle-xmark text-danger"></i>
+         </span>
+      </li>
+
+        <li>
+          <h4 class="InStock color">{{item.qty !==0 ? 'In Stock': ''}}</h4>
+          <h4 class="text-danger">{{item.qty ===0 ? 'Out Of Stock': ''}}</h4>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+         
+        <img [src]="item.image[1]" >
+        
+      </figure>
+
+      <button class="btn2" (click)="goToCartPage(item.id)" [disabled]="item.qty === 0" >Add To Cart</button>
+
+      <div class="design-container">
+        <span class="design design--1"></span>
+        <span class="design design--2"></span>
+        <span class="design design--3"></span>
+        <span class="design design--4"></span>
+        <span class="design design--5"></span>
+        <span class="design design--6"></span>
+        <span class="design design--7"></span>
+        <span class="design design--8"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<!----------------------------------------------------------- All-Products-Section ----------------------------------------->
+<h1 class="text-center product-heading">All-Products</h1>
+
+
+<div class="container-fluid mb-5">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of DataComeFromJson">
+      <!-- flip-card-container -->
+<div class="flip-card-container cardBox2" style="--hue: 220">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img class="image1"  [src]="item.image[0]"  alt="Salman Baloch">
+        <figcaption>{{item.Name}}</figcaption>
+      </figure>
+
+      <ul>
+        <!-- <li><h5 style="color:white;">{{item.title}}</h5></li> -->
+        <li><h5 class="color white">Total Quantity</h5></li>
+        <li><h4 class="color white">{{item.qty}}</h4></li>
+
+        <li>
+          <span *ngIf="item.qty!==0"><i class="fa-solid fa-square-check text-primary"></i>
+          </span>
+
+          <span *ngIf="item.qty === 0"><i class="fa-solid fa-rectangle-xmark text-danger"></i>
+         </span>
+      </li>
+
+        <li>
+          <h4 class="text-primary InStock color">{{item.qty !==0 ? 'In Stock': ''}}</h4>
+          <h4 class="text-danger OutStock color">{{item.qty ===0 ? 'Out Of Stock': ''}}</h4>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+         
+        <img [src]="item.image[1]" >
+        
+      </figure>
+
+      <button class="btn2" (click)="goToCartPage(item.id)" [disabled]="item.qty === 0" >Add To Cart</button>
+
+      <div class="design-container">
+        <span class="design design--1"></span>
+        <span class="design design--2"></span>
+        <span class="design design--3"></span>
+        <span class="design design--4"></span>
+        <span class="design design--5"></span>
+        <span class="design design--6"></span>
+        <span class="design design--7"></span>
+        <span class="design design--8"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<!----------------------------------------------------------- Sale-section ----------------------------------------->
+<!-- <div class="bgImg">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1>Hurry-Up Time Lef For Sale</h1>
+        <h1 class="countdown">
+         <span>7:08:60</span> 
+        </h1>
+<button class="button-57" role="button"><span class="text">Shop</span><span>Now</span></button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!----------------------------------------------------------- Carosel-section ----------------------------------------->
+
+
+<!----------------------------------------------------------- over-view-section ----------------------------------------->
+
+<div class="bgimg1">
+   <section class="section section-default mt-none mb-none section-services">
+      <h2 class="text-center text-white py-5">
+        Our <strong>Services</strong>
+     </h2>
+      <div class="container">
+        
+         <div class="row">
+            <div class="col-md-4">
+               <div class="service-block-container">
+                  <div class="service-block">
+                     <div class="service-underlay">
+                        <span class="service-name">
+   Waranty
+    </span>
+                        <a class="cta">Learn More</a>
+                     </div>
+                     <span class="service-icon">
+                      <i class="fa-solid fa-shield-halved"></i>
+    </span>
+                     <span class="service-desc">
+    We Give Garantee Of Waranty
+    </span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-8">
+             <div class="mt-5 text-white s1">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis. adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis.
+             </div>
+            </div>
+            
+         </div>
+
+            <!------------------------------------------------------------------- Row-2 -->
+
+         <div class="row mt-5">
+          <div class="col-md-8">
+            <div class="mt-5 text-white s2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis. adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis.
+             </div>
+          </div>
+          <div class="col-md-4">
+              <div class="service-block-container">
+                 <div class="service-block">
+                    <div class="service-underlay">
+                       <span class="service-name">
+   Free-Delivery
+   </span>
+                       <a class="cta" >Learn More</a>
+                    </div>
+                    <span class="service-icon">
+   <em class="fa fa-barcode"></em>
+   </span>
+                    <span class="service-desc">
+   World leading enterprise Delivery
+   </span>
+                 </div>
+              </div>
+           
+          </div>
+         </div>
+                    <!------------------------------------------------------------------- Row-3 -->
+         <div class="row mt-5">
+          <div class="col-md-4">
+              <div class="service-block-container">
+                 <div class="service-block">
+                    <div class="service-underlay">
+                       <span class="service-name">
+   Support
+   </span>
+                       <a class="cta">Learn More</a>
+                    </div>
+                    <span class="service-icon">
+   <em class="fa fa-gbp"></em>
+   </span>
+                    <span class="service-desc">
+   We Give 24/7 Support Our Coustomers
+   </span>
+                 </div>
+              </div>
+           
+          </div>
+          <div class="col-md-8">
+
+              <div class="mt-5 text-white s3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis. adipisicing elit. Adipisci velit expedita vitae culpa ad odio labore optio, illum iste recusandae nesciunt aliquid animi, eligendi, sequi nisi eaque pariatur cumque voluptate amet. Perferendis.
+               </div>
+           
+          </div>
+         </div>
+
+      </div>
+    </section>
+</div>
+
+<!----------------------------------------------------------- over-view-section ----------------------------------------->

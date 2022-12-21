@@ -1,0 +1,115 @@
+<!--------------------------- Header-Section -->
+
+<div class="img">
+    <div class="container">
+      <div class="row">
+        <div class="banner-header text-center">
+          <h1 class="text-white text-center">|Best Shopping Website</h1>
+          <h3 class="text-center text-white">Go And Explore Our E-Commerce-Web App</h3>
+      <!-- HTML !-->
+    <button class="button-58" role="button"><span class="text">Explore</span><span>Products</span></button>
+           
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    </div>
+
+<!--------------------------- Header-Section -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <!-- <h1 class="text-primary productHeading">Name: {{FilteredObject[0].Name}}</h1>
+                <h3 >Quantity: {{FilteredObject[0].qty}}</h3> -->
+            <img *ngFor="let item of FilteredObject[0].image" [src]="item" alt="" srcset="">
+        </div>
+       
+        <div class="col-md-7 c2">
+            <div class="container c1 ">
+                <div *ngIf="showBox===false">
+                    <h3 class="text-center">Nothing Has Selected</h3>
+                </div>
+            </div>
+
+            <div class="cart-info text-center">
+                <h3>Product: {{FilteredObject[0].Name}}</h3><br>
+                <span>RS {{FilteredObject[0].productPrice}}</span>
+                <h5>Please Select Size</h5>
+            </div>
+
+            <form class="ng-untouched ng-valid ng-pristine" >
+              <div class="formGroup">
+               <div class="select-size">
+                <label>Large</label>
+                <input type="checkbox">
+               </div>
+               <div class="select-size">
+                <label >X-Large</label>
+                <input type="checkbox">
+               </div>
+               <div class="select-size">
+                <label >XX-Large</label>
+                <input type="checkbox">
+               </div>
+              </div>
+            </form>
+
+            <div class="availabel text-center mt-5">
+                <h5>Available-Colors</h5>
+                <span>Colors:</span>
+                <ul class="st" >
+                    <li class="text-center">Blue</li>
+                </ul>
+                <ul class="red">
+                    <li class="text-center">Red</li>
+                </ul>
+                <ul class="black">
+                    <li class="text-center">Black</li>
+                </ul>
+            </div>
+          
+            <div class="text-center QTY">
+                <h5>Quantity In Stoke</h5>
+                <ul>
+                    <li>{{FilteredObject[0].qty}}</li>
+                </ul>
+            </div>
+            <div class="text-center QTY">
+                <h5>Please Select Quantity</h5>
+                <ul>
+                    <li type="button"(click)="SubtractQuantity()">+</li>
+                </ul>
+                <ul>
+                    <li>{{selectedQuantity}}</li>
+                </ul>
+                <ul>
+                    <li type="button"(click)="addQuantity()">+</li>
+                </ul>
+                <button class="btn btn-outline-dark btn11 w-50" >Add To Cart</button>
+                <button class="btn btn-outline-dark btn11 w-50" >View Cart</button>
+                <button class="btn btn-outline-dark btn11 w-50" >Continue Shopping</button>
+                <button class="btn btn-outline-dark btn11 w-50" >Go To Home</button>
+            </div>
+            
+
+            <div class="container boxshow">
+                <div *ngIf="showBox===true">
+                    <div *ngFor="let _Data of GetSaveDataFromLocalStorage">
+                        <img [src]="_Data.image[0]" alt="" class="w-25 h-25">
+                        <span >SelectedQuantity: <p class="ms-1">{{_Data.newQuantity}}</p></span>
+                    </div>
+                    <!-- <span class=""> TotalCartQuantity: <p class="ms-1">{{totalQuantity}}</p></span> -->
+                </div>
+            </div>
+            <!-- <div class="box text-center">
+                <button type="button" class="btn1" (click)="addQuantity()" >+</button>
+            <span class="ms-2 me-2">{{selectedQuantity}}</span>
+            <button type="button" class="btn1" (click)="SubtractQuantity()">-</button>
+            </div> -->
+        </div>
+        
+       
+
+</div>

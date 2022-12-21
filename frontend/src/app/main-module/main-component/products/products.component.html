@@ -1,0 +1,81 @@
+<div class="img">
+    <div class="container">
+      <div class="row">
+        <div class="banner-header text-center">
+          <h1 class="text-white text-center">|Best Shopping Website</h1>
+          <h3 class="text-center text-white">Go And Explore Our E-Commerce-Web App</h3>
+      <!-- HTML !-->
+    <button class="button-58" role="button"><span class="text">Explore</span><span>Products</span></button>
+           
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    </div>
+    <!----------------------------------------------------------- All-Products-Section ----------------------------------------->
+<h1 class="text-center product-heading">All-Products</h1>
+
+
+
+<div class="container-fluid mb-5">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of DataComeFromJson">
+      <!-- flip-card-container -->
+<div class="flip-card-container cardBox2" style="--hue: 220">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img class="image1"  [src]="item.image[0]"  alt="Salman Baloch">
+        <figcaption>{{item.Name}}</figcaption>
+      </figure>
+
+      <ul>
+        <!-- <li><h5 style="color:white;">{{item.title}}</h5></li> -->
+        <li><h5 class="color white">Total Quantity</h5></li>
+        <li><h4 class="color white">{{item.qty}}</h4></li>
+
+        <li>
+          <span *ngIf="item.qty!==0"><i class="fa-solid fa-square-check text-primary"></i>
+          </span>
+
+          <span *ngIf="item.qty === 0"><i class="fa-solid fa-rectangle-xmark text-danger"></i>
+         </span>
+      </li>
+
+        <li>
+          <h4 class="text-primary InStock color">{{item.qty !==0 ? 'In Stock': ''}}</h4>
+          <h4 class="text-danger OutStock color">{{item.qty ===0 ? 'Out Of Stock': ''}}</h4>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+         
+        <img [src]="item.image[1]" >
+        
+      </figure>
+
+      <button class="btn2" (click)="goToCartPage(item.id)" [disabled]="item.qty === 0" >Add To Cart</button>
+
+      <div class="design-container">
+        <span class="design design--1"></span>
+        <span class="design design--2"></span>
+        <span class="design design--3"></span>
+        <span class="design design--4"></span>
+        <span class="design design--5"></span>
+        <span class="design design--6"></span>
+        <span class="design design--7"></span>
+        <span class="design design--8"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
